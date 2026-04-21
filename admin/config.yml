@@ -1,12 +1,16 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-<body>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-</body>
-</html>
+backend:
+  name: git-gateway
+  branch: principal
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+collections:
+    - name: "moduri"
+    label: "Moduri FS25"
+    folder: "content/moduri"
+    create: true
+    slug: "{{slug}}"
+    fields:
+            - {label: "Titlu Mod", name: "title", widget: "string"}
+            - {label: "Descriere", name: "body", widget: "markdown"}
+            - {label: "Imagine", name: "thumbnail", widget: "image"}
+            - {label: "Link Download", name: "download", widget: "string"}
