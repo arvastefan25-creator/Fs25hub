@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+collections:
+    - name: "moduri"
+    label: "Moduri FS25"
+    folder: "content/moduri"
+    create: true
+    slug: "{{slug}}"
+    fields:
+            - {label: "Titlu Mod", name: "title", widget: "string"}
+            - {label: "Descriere", name: "body", widget: "markdown"}
+            - {label: "Imagine", name: "thumbnail", widget: "image"}
+            - {label: "Link Download", name: "download", widget: "string"}
